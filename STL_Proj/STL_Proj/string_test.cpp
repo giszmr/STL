@@ -196,8 +196,376 @@ void StringTest::StringCompare()
 		cout << str2 << " is an apple" << endl;
 }
 
+/*
+string (1)
+	size_t find (const string& str, size_t pos = 0) const noexcept;
 
+c-string (2)
+	size_t find (const char* s, size_t pos = 0) const;
+
+buffer (3)
+	size_t find (const char* s, size_t pos, size_type n) const;
+
+character (4)
+	size_t find (char c, size_t pos = 0) const noexcept;
+
+*/
 void StringTest::StringFind()
 {
+	string str1 = "I have two boxes, but he has three boxes.";
+	string str2("box");
+	size_t pos = 0;
+
+	cout << "----------------string find test------------------" << endl;
+	cout << "str1: " << str1 << endl;
+	cout << "str2: " << str2 << endl;
+
+	pos = str1.find(str2);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is found at " << pos << endl;
+
+	pos = str1.find(str2, 12);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is found at " << pos << endl;
+
+	const char *cStr = "boxes";
+	pos = str1.find(cStr);
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	pos = str1.find(cStr, 12);
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	pos = str1.find('b', 1);   //find one character
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	pos = str1.find(cStr, 10, 1); //find 'b' of "boxes" at inde 11 (boxes)
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	pos = str1.find(cStr, 12, 1);  //find 'b' of "boxes" at index 18 (but)
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	pos = str1.find(cStr, 12, 2); //find "bo" of "boxes" at index 35 (boxes)
+	if (pos != string::npos)
+		cout << "CHAR " << cStr << " is found at " << pos << endl;
+
+	cout << "----------------string rfind test------------------" << endl;
+	pos = str1.rfind(str2);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is rfind at index " << pos << endl;
+
+	pos = str1.rfind(str2, 35);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is rfind at index " << pos << endl;
+
+	pos = str1.rfind(str2, 34);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is rfind at index " << pos << endl;
+
+	const char* cStrr = "boxes";
+	pos = str1.rfind(cStrr);
+	if (pos != string::npos)
+		cout << "CHAR " << cStrr << " is rfind at index " << pos << endl;
+
+	pos = str1.rfind(cStrr, 35, 1);
+	if (pos != string::npos)
+		cout << "CHAR 'b' is rfind at index " << pos << endl;
+
+	pos = str1.rfind(cStrr, 34, 1); //match "but"
+	if (pos != string::npos)
+		cout << "CHAR 'b' is rfind at index " << pos << endl;
+
+	pos = str1.rfind(cStrr, 34, 2); //match "boxes"
+	if (pos != string::npos)
+		cout << "CHAR 'bo' is rfind at index " << pos << endl;
+
+	pos = str1.rfind('b', 34);
+	if (pos != string::npos)
+		cout << "CHAR 'b' is rfind at index " << pos << endl;
+
+	cout << "----------------string find_first_of test------------------" << endl;
+	pos = str1.find_first_of(str2);
+	if (pos != string::npos)
+		cout << "char 'o' of " << str2 << " is find_first_of at index " << pos << endl;
+
+	pos = str1.find_first_of('x', 15);
+	if (pos != string::npos)
+		cout << "char 'x' is find_frist_of at index " << pos << endl;
+
+	cout << "----------------string find_last_of test------------------" << endl;
+	pos = str1.find_last_of(str2);
+	if (pos != string::npos)
+		cout << "char 'o' of " << str2 << " is find_last_of at index " << pos << endl;
+
+	pos = str1.find_last_of('x', 15);
+	if (pos != string::npos)
+		cout << "char 'x' is find_last_of at index " << pos << endl;
+
+	cout << "----------------string find_first_not_of test------------------" << endl;
+	pos = str1.find_first_not_of(str2);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is find_first_not_of at index " << pos << endl;
+
+	pos = str1.find_first_not_of('x', 15);
+	if (pos != string::npos)
+		cout << "char 'x' is find_first_not_of at index " << pos << endl;
+
+	cout << "----------------string find_last_not_of test------------------" << endl;
+	pos = str1.find_last_not_of(str2);
+	if (pos != string::npos)
+		cout << "string " << str2 << " is find_last_not_of at index " << pos << endl;
+
+	pos = str1.find_last_not_of('x', 15);
+	if (pos != string::npos)
+		cout << "char 'x' is find_last_not_of at index " << pos << endl;
+
+
+	cout << "----------------string substr test------------------" << endl;
+	string strTmp = "Happy birthday to you.";
+	string subStr = strTmp.substr(1, 10);
+	cout << "substr: " << subStr << endl;
+
+	cout << "----------------string copy test------------------" << endl;
+	char buffer[50] = { 0 };
+	strTmp.copy(buffer, 5, 3);
+	cout << "copy: " << buffer << endl;
+}
+
+void StringTest::StringModifier()
+{
+	cout << "***************StringModifier******************" << endl;
+	/*string (1)
+		string& operator+= (const string& str);
+
+	c-string (2)
+		string& operator+= (const char* s);
+
+	character (3)
+		string& operator+= (char c);
+
+	initializer list (4)
+		string& operator+= (initializer_list<char> il);
+	*/
+	cout << "string& operator+= (const string& str);=>" << endl;
+	string str1 = "good";
+	string str2("morning");
+	str1 += " ";
+	str1 += str2;
+	cout << "	" << str1 << endl;
+
+	/*string (1)
+		string& append (const string& str);
+
+	substring (2)
+		string& append (const string& str, size_t subpos, size_t sublen);
+
+	c-string (3)
+		string& append (const char* s);
+
+	buffer (4)
+		string& append (const char* s, size_t n);
+
+	fill (5)
+		string& append (size_t n, char c);
+
+	range (6)
+		template <class InputIterator>
+			string& append (InputIterator first, InputIterator last);
+
+	initializer list(7)
+		string& append (initializer_list<char> il);
+	*/
+	cout << "string& append (const string& str);=>" << endl;
+	string str3 = "good";
+	string str4(" afternoon");
+	str3.append(str4);
+	//str3.append('!');   //character is not allowed
+	str3.append("!");
+	cout << "	" << str3 << endl;
+
+	cout << "void push_back (char c);=>" << endl;
+	string str5 = "haha";
+	str5.push_back('G');
+	cout << "	" << str5 << endl;
+
+	/*string (1)
+		string& assign (const string& str);
+
+	substring (2)
+		string& assign (const string& str, size_t subpos, size_t sublen);
+
+	c-string (3)
+		string& assign (const char* s);
+
+	buffer (4)
+		string& assign (const char* s, size_t n);
+
+	fill (5)
+		string& assign (size_t n, char c);
+
+	range (6)
+		template <class InputIterator>
+			string& assign (InputIterator first, InputIterator last);
+
+	initializer list(7)
+		string& assign (initializer_list<char> il);
+
+	move (8)
+		string& assign (string&& str) noexcept;
+	*/
+	cout << "string& assign (const string& str);=>" << endl;
+	string str6 = "good";
+	string str7 = "bye";
+	str6.assign(str7);
+	cout << "	" << str6 << endl;
+	str6.assign(10, 'a');
+	cout << "	" << str6 << endl;
+
+	/*string (1)
+		 string& insert (size_t pos, const string& str);
+
+	substring (2)
+		 string& insert (size_t pos, const string& str, size_t subpos, size_t sublen);
+
+	c-string (3)
+		 string& insert (size_t pos, const char* s);
+
+	buffer (4)
+		 string& insert (size_t pos, const char* s, size_t n);
+
+	fill (5)
+		 string& insert (size_t pos,   size_t n, char c);
+		 iterator insert (const_iterator p, size_t n, char c);
+
+	single character (6)
+		iterator insert (const_iterator p, char c);
+
+	range (7)
+		template <class InputIterator>
+		iterator insert (iterator p, InputIterator first, InputIterator last);
+
+	initializer list (8)
+		 string& insert (const_iterator p, initializer_list<char> il);
+	*/
+	cout << "string& insert (size_t pos, const string& str);=>" << endl;
+	string str8 = "How are you";
+	string str9 = "bbb";
+	str8.insert(3, str9);
+	cout << "	" << str8 << endl;
+
+	/*sequence (1)
+		 string& erase (size_t pos = 0, size_t len = npos);
+
+	character (2)
+		iterator erase (const_iterator p);
+
+	range (3)
+		iterator erase (const_iterator first, const_iterator last);
+	*/
+	cout << "string& erase (size_t pos = 0, size_t len = npos);=>" << endl;
+	string str10 = "I want to sleep";
+	cout << "	" << str10 << " " << str10.length() << endl;
+	str10.erase(2, 4);
+	cout << "	" << str10 << " " << str10.length() << endl;
+
+
+	/*string (1)
+		string& replace (size_t pos,        size_t len,        const string& str);
+		string& replace (const_iterator i1, const_iterator i2, const string& str);
+
+	substring (2)
+		string& replace (size_t pos,        size_t len,        const string& str,
+						 size_t subpos, size_t sublen);
+
+	c-string (3)
+		string& replace (size_t pos,        size_t len,        const char* s);
+		string& replace (const_iterator i1, const_iterator i2, const char* s);
+
+	buffer (4)
+		string& replace (size_t pos,        size_t len,        const char* s, size_t n);
+		string& replace (const_iterator i1, const_iterator i2, const char* s, size_t n);
+
+	fill (5)
+		string& replace (size_t pos,        size_t len,        size_t n, char c);
+		string& replace (const_iterator i1, const_iterator i2, size_t n, char c);
+
+	range (6)
+		template <class InputIterator>
+			string& replace (const_iterator i1, const_iterator i2,
+							   InputIterator first, InputIterator last);
+
+	initializer list (7)
+		string& replace (const_iterator i1, const_iterator i2, initializer_list<char> il);
+	*/
+	cout << "string& replace (size_t pos, size_t len, const string& str);=>" << endl;
+	string str11 = "I have a red hat";
+	cout << "	" << str11 << endl;
+	string str12 = "blue";
+	size_t pos = str11.find("red");
+	str11.replace(pos, 3, str12);
+	cout << "	" << str11 << endl;
+
+	cout << "void swap (string& str);=>" << endl;
+	string str13 = "autumn";
+	string str14 = "summer";
+	cout << "	" << str13 << " || " << str14 << endl;
+	str13.swap(str14);
+	cout << "	" << str13 << " || " << str14 << endl;
+
+	cout << "void pop_back();=>" << endl;
+	string str15 = "abcdefg";
+	while (str15.length() != 0)
+	{
+		cout << "	" << str15 << endl;
+		str15.pop_back();
+	}
+	cout << "enddddddddddddd" << endl;
 
 }
+
+void StringTest::StringIterator()
+{
+	cout << "***************StringIterator******************" << endl;
+
+	string str = "Can you do this?";
+	string::iterator strIter;
+	for (strIter = str.begin(); strIter != str.end(); strIter++)
+	{
+		if (*strIter == 'C')
+			*strIter = 'K';
+		cout << *strIter;
+	}
+	cout << endl;
+
+	string::reverse_iterator rIter;
+	for (rIter = str.rbegin(); rIter != str.rend(); rIter++)
+	{
+		if (*rIter == 'C')
+			*rIter = 'K';
+		cout << *rIter;
+	}
+	cout << endl;
+
+	string::const_iterator cIter;
+	for (cIter = str.cbegin(); cIter != str.cend(); cIter++)
+	{
+		//if (*rIter == 'C')
+		//	*rIter = 'K';
+		cout << *cIter;
+	}
+	cout << endl;
+
+	string::const_reverse_iterator crIter;
+	for (crIter = str.crbegin(); crIter != str.crend(); crIter++)
+	{
+		//if (*rIter == 'C')
+		//	*rIter = 'K';
+		cout << *crIter;
+	}
+	cout << endl;
+}
+

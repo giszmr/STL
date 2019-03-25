@@ -15,6 +15,8 @@ int main()
 	st.CapacityTest();
 	st.ElementAccessTest();
 	st.StringOperations();
+	st.StringModifier();
+	st.StringIterator();
 
 	return 0;
 }

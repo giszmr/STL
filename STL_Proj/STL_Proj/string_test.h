@@ -16,9 +16,12 @@ namespace STL_Test
 		void CapacityTest();
 		void ElementAccessTest();
 		void StringOperations();
+		void StringModifier();
+		void StringIterator();
 	private:
 		void StringCompare();
 		void StringFind();
+
 	};
 
 }
