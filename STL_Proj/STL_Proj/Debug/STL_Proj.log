@@ -1,7 +1,2 @@
-﻿  pch.cpp
-  STL_Main.cpp
-  string_test.cpp
-c:\users\mengriz\source\repos\stl_proj\stl_proj\string_test.cpp(120): warning C4018: '<': signed/unsigned mismatch
-c:\users\mengriz\source\repos\stl_proj\stl_proj\string_test.cpp(127): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  STL_Main.cpp
   STL_Proj.vcxproj -> C:\Users\mengriz\source\repos\STL_Proj\Debug\STL_Proj.exe

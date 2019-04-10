@@ -117,14 +117,14 @@ void StringTest::ElementAccessTest()
 	string str("http://c.biancheng.net/view/1446.html");
 
 	//reference of specified character
-	for (int i = 0; i < str.length(); i++)
+	for (size_t i = 0; i < str.length(); i++)
 	{
 		cout << str[i];
 	}
 	cout << endl;
 
 	//reference of specified character
-	for (int i = 0; i < str.length(); i++)
+	for (size_t i = 0; i < str.length(); i++)
 	{
 		cout << str.at(i);
 	}

@@ -21,6 +21,18 @@
     <ClInclude Include="string_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="array_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="list_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deque_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -30,6 +42,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="STL_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="array_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deque_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="list_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
