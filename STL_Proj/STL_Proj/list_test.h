@@ -15,6 +15,7 @@ namespace STL_Test
 		void CapacityTest();
 		void ElementAccessTest();
 		void ModifiersTest();
+		void OperationsTest();
 	};
 }
 

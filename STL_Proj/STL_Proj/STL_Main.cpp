@@ -55,6 +55,7 @@ int main()
 	lt.CapacityTest();
 	lt.ElementAccessTest();
 	lt.ModifiersTest();
+	lt.OperationsTest();
 
 
 	return 0;

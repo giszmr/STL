@@ -29,7 +29,6 @@ void ArrayTest::CapacityTest()
 	cout << "arr2 empty:    " << arr2.empty() << endl;
 }
 
-
 void ArrayTest::ModifiersTest()
 {
 	cout << "-------------array::fill-------------------" << endl;
@@ -121,7 +120,6 @@ void ArrayTest::IteratorTest()
 		cout << *it << endl;
 	}
 }
-
 
 void ArrayTest::ElementAccessTest()
 {
