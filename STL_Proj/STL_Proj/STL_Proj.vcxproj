@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="array_test.h" />
     <ClInclude Include="deque_test.h" />
+    <ClInclude Include="forward_list_test.h" />
     <ClInclude Include="list_test.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="string_test.h" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="array_test.cpp" />
     <ClCompile Include="deque_test.cpp" />
+    <ClCompile Include="forward_list_test.cpp" />
     <ClCompile Include="list_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

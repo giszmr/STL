@@ -8,6 +8,7 @@
 #include "vector_test.h"
 #include "deque_test.h"
 #include "list_test.h"
+#include"forward_list_test.h"
 
 using namespace STL_Test;
 using namespace std;
@@ -21,6 +22,7 @@ int main()
 	//st.StringOperations();
 	//st.StringModifier();
 	//st.StringIterator();
+
 
 	//cout << "======================================" << endl;
 	//cout << "======================================" << endl;
@@ -40,6 +42,7 @@ int main()
 	//vt.ModifiersTest();
 	//vt.GetAllocatorTest();
 
+
 	/*cout << "======================================" << endl;
 	cout << "======================================" << endl;
 	DequeTest dt;*/
@@ -48,15 +51,23 @@ int main()
 	//dt.ElementAccessTest();
 	//dt.ModifiersTest();
 
-	cout << "======================================" << endl;
-	cout << "======================================" << endl;
-	ListTest lt;
-	lt.MemberFunctionsTest();
-	lt.CapacityTest();
-	lt.ElementAccessTest();
-	lt.ModifiersTest();
-	lt.OperationsTest();
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//ListTest lt;
+	//lt.MemberFunctionsTest();
+	//lt.CapacityTest();
+	//lt.ElementAccessTest();
+	//lt.ModifiersTest();
+	//lt.OperationsTest();
+	//lt.MergeTest();
+
+
+	cout << "======================================" << endl;
+	cout << "======================================" << endl;
+	ForwardListTest flt;
+	flt.ModifiersTest();
+	flt.OperationsTest();
 
 	return 0;
 }
