@@ -159,6 +159,9 @@
     <ClInclude Include="forward_list_test.h" />
     <ClInclude Include="list_test.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="priority_queue_test.h" />
+    <ClInclude Include="queue_test.h" />
+    <ClInclude Include="stack_test.h" />
     <ClInclude Include="string_test.h" />
     <ClInclude Include="vector_test.h" />
   </ItemGroup>
@@ -173,6 +176,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="priority_queue_test.cpp" />
+    <ClCompile Include="queue_test.cpp" />
+    <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="STL_Main.cpp" />
     <ClCompile Include="string_test.cpp" />
     <ClCompile Include="vector_test.cpp" />

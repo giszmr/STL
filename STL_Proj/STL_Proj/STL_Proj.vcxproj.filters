@@ -36,6 +36,15 @@
     <ClInclude Include="forward_list_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="stack_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="queue_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="priority_queue_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -60,6 +69,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="forward_list_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stack_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="priority_queue_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

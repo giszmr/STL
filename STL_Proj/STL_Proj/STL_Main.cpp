@@ -8,7 +8,10 @@
 #include "vector_test.h"
 #include "deque_test.h"
 #include "list_test.h"
-#include"forward_list_test.h"
+#include "forward_list_test.h"
+#include "stack_test.h"
+#include "queue_test.h"
+#include "priority_queue_test.h"
 
 using namespace STL_Test;
 using namespace std;
@@ -63,11 +66,31 @@ int main()
 	//lt.MergeTest();
 
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//ForwardListTest flt;
+	//flt.ModifiersTest();
+	//flt.OperationsTest();
+
+
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//StackTest stkt;
+	//stkt.Test();
+
+
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//QueueTest qt;
+	//qt.Test();
+
+
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	ForwardListTest flt;
-	flt.ModifiersTest();
-	flt.OperationsTest();
+	PriorityQueueTest pqt;
+	pqt.Test();
 
 	return 0;
 }

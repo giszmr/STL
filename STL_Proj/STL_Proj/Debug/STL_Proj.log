@@ -1,2 +1,13 @@
-﻿  STL_Main.cpp
+﻿  pch.cpp
+  array_test.cpp
+  deque_test.cpp
+  forward_list_test.cpp
+  list_test.cpp
+  priority_queue_test.cpp
+  queue_test.cpp
+  stack_test.cpp
+  STL_Main.cpp
+  string_test.cpp
+  vector_test.cpp
+  Generating Code...
   STL_Proj.vcxproj -> C:\Users\mengriz\source\repos\STL_Proj\Debug\STL_Proj.exe
