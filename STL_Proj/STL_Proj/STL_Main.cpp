@@ -12,6 +12,9 @@
 #include "stack_test.h"
 #include "queue_test.h"
 #include "priority_queue_test.h"
+#include "map_test.h"
+#include "multimap_test.h"
+#include "compare_test.h"
 
 using namespace STL_Test;
 using namespace std;
@@ -87,10 +90,36 @@ int main()
 	//qt.Test();
 
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//PriorityQueueTest pqt;
+	//pqt.Test();
+
+
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//MapTest mt;
+	//mt.ConstructorTest();
+	//mt.ModifiersTest();
+	//mt.ObserversTest();
+	//mt.OperationsTest();
+
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//MultimapTest mmt;
+	//mmt.ConstructorTest();
+	//mmt.ModifiersTest();
+	//mmt.ObserversTest();
+	//mmt.OperationsTest();
+
+
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	PriorityQueueTest pqt;
-	pqt.Test();
+	CompareTest cpt;
+	cpt.Test();
+
 
 	return 0;
 }

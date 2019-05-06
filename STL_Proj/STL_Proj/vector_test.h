@@ -2,6 +2,9 @@
 #ifndef _VECTOR_TEST_H_
 #define _VECTOR_TEST_H_
 
+#include <vector>
+#include <string>
+
 #pragma once
 
 
@@ -18,6 +21,10 @@ namespace STL_Test
 		void ModifiersTest();
 		void ElementAccessTest();
 		void GetAllocatorTest();
+	private:
+		void Output(std::vector<int> myVector, std::string name);
+		void Output(std::vector<double> myVector, std::string name);
+		void Output(std::vector<std::string> myVector, std::string name);
 	};
 }
 

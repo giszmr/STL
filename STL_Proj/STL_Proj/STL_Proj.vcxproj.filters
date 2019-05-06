@@ -45,6 +45,15 @@
     <ClInclude Include="priority_queue_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="map_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multimap_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="compare_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -78,6 +87,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="priority_queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="map_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multimap_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="compare_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

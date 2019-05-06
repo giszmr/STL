@@ -6,6 +6,7 @@
 #include <iostream> //cin
 #include <iterator> //istream_iterator
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 using namespace STL_Test;
@@ -51,179 +52,61 @@ void VectorTest::MemberFunctionsTest()
 	vector<int> second(4, 132);
 	vector<int> third(second.begin(), second.end());
 	vector<int> fourth(third);
+	Output(first, "first ");
+	Output(first1, "first1");
+	Output(second, "second");
+	Output(third, "third ");
+	Output(fourth, "fourth");
 
-	cout << "        size  " << "max_size      " << "capacity  " << "empty" << endl;
-	cout << "first   " << first.size() << "     " << hex << first.max_size() << dec << "      " << first.capacity() << "         " << first.empty() << endl;
-	cout << "second  " << second.size() << "     " << hex << second.max_size() << dec << "      " << second.capacity() << "         " << second.empty() << endl;
-	cout << "third   " << third.size() << "     " << hex << third.max_size() << dec << "      " << third.capacity() << "         " << third.empty() << endl;
-	cout << "fourth  " << fourth.size() << "     " << hex << fourth.max_size() << dec << "      " << fourth.capacity() << "         " << fourth.empty() << endl;
 
-	cout << "----vector<int> first;----" << endl;
-	vector<int>::iterator iter;
-	cout << "	first: ";
-	for (iter = first.begin(); iter != first.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
-	cout << "----vector<int> first1(10);----" << endl;
-	cout << "	first1: ";
-	for (iter = first1.begin(); iter != first1.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
-	cout << "----vector<int> second(4, 100);----" << endl;
-	cout << "	second: ";
-	for (iter = second.begin(); iter != second.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
-	cout << "----vector<int> third(second.begin(), second.end());----" << endl;
-	cout << "	third : ";
-	for (iter = third.begin(); iter != third.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
-	cout << "----vector<int> fourth(third);----" << endl;
-	cout << "	fourth: ";
-	for (iter = fourth.begin(); iter != fourth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
-	cout << "----vector<int> fifth{begin(fourth), end(fourth)};----" << endl;
+	cout << "fifth{begin(fourth), end(fourth)}:" << endl;
 	vector<int> tmp{ 123, 124, 125, 126 ,127, 128};
 	vector<int> fifth{begin(tmp), end(tmp)};
 	//vector<int> fifth1{end(tmp), begin(tmp)};       // will cause programme aborting.
-	cout << "	fifth : ";
-	for (iter = fifth.begin(); iter != fifth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(fifth, "fifth ");
 
-	cout << "----vector<int> sixth{ make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)) };----" << endl;
+
+	cout << "sixth{ make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)) }:" << endl;
 	vector<int> sixth{ make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)) };
-	cout << "	fifth: ";
-	for (iter = fifth.begin(); iter != fifth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	sixth: ";
-	for (iter = sixth.begin(); iter != sixth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	orignal vector: ";
-	for (iter = tmp.begin(); iter != tmp.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(tmp, "tmp   ");
+	Output(fifth, "fifth ");
+	Output(sixth, "sixth ");
 
-	cout << "----vector<int> sixth1{ make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)) };----" << endl;
+
+	cout << "copy(make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)), sixth1.begin()):" << endl;
 	vector<int> sixth1(fifth.size()); //must initialize size of sixth1. and size of sixth1 must equal that of fifth.
 	copy(make_move_iterator(begin(fifth)), make_move_iterator(end(fifth)), sixth1.begin());
-	// bar now contains unspecified values; clear it:  --> this is offical explaination
+	// fifth now contains unspecified values; clear it:  --> this is offical explaination
 	fifth.clear();
-	cout << "	fifth: ";
-	for (iter = fifth.begin(); iter != fifth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	sixth1: ";
-	for (iter = sixth1.begin(); iter != sixth1.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	orignal vector: ";
-	for (iter = tmp.begin(); iter != tmp.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(tmp, "tmp   ");
+	Output(fifth, "fifth ");
+	Output(sixth1, "sixth1");
 
-	cout << "----vector<int> seventh(arrInt, arrInt + sizeof(arrInt) / sizeof(int));----" << endl;
+	cout << "seventh(arrInt, arrInt + sizeof(arrInt) / sizeof(int)):" << endl;
 	int arrInt[] = { 10, 20, 30, 40, 50, 60 };
 	vector<int> seventh(arrInt, arrInt + sizeof(arrInt) / sizeof(int));
 	//vector<int> seventh(arrInt + sizeof(arrInt) / sizeof(int), arrInt);   // will cause programme aborting.
-	cout << "	seventh: ";
-	for (iter = seventh.begin(); iter != seventh.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(seventh, "seventh");
 
-	cout << "----vector<int> eighth(seventh.crbegin(), seventh.crend());----" << endl;
+	cout << "eighth(seventh.crbegin(), seventh.crend()):" << endl;
 	vector<int> eighth(seventh.crbegin(), seventh.crend());
 	//vector<int> eighth(seventh.crend(), seventh.crbegin());         // will cause programme aborting.
-	cout << "	eighth: ";
-	for (iter = eighth.begin(); iter != eighth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(eighth, "eighth");
 
-	cout << "----std::vector::operator=----" << endl;
+	cout << "operator=:" << endl;
 	vector<int> ninth(5, 1);
 	vector<int> tenth(8, 3);
-	cout << "    before 'tenth = ninth' :" << endl;
-	cout << "		size  " << "max_size      " << "capacity  " << "empty" << endl;
-	cout << "	ninth   " << hex << ninth.size() << dec << "     " << ninth.max_size() << "    " << ninth.capacity() << "         " << ninth.empty() << endl;
-	cout << "	tenth   " << tenth.size() << "     " << tenth.max_size() << "    " << tenth.capacity() << "         " << tenth.empty() << endl;
-	cout << "	ninth: ";
-	for (iter = ninth.begin(); iter != ninth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	tenth: ";
-	for (iter = tenth.begin(); iter != tenth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-
+	Output(ninth, "ninth");
+	Output(tenth, "tenth");
 	tenth = ninth;
-	cout << "    after 'tenth = ninth' :" << endl;
-	cout << "		size  " << "max_size      " << "capacity  " << "empty" << endl;
-	cout << "	ninth   " << hex << ninth.size() << dec << "     " << ninth.max_size() << "    " << ninth.capacity() << "         " << ninth.empty() << endl;
-	cout << "	tenth   " << tenth.size() << "     " << tenth.max_size() << "    " << tenth.capacity() << "         " << tenth.empty() << endl;
-	cout << "	ninth: ";
-	for (iter = ninth.begin(); iter != ninth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
-	cout << "	tenth: ";
-	for (iter = tenth.begin(); iter != tenth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	cout << "after 'tenth = ninth' :" << endl;
+	Output(ninth, "ninth");
+	Output(tenth, "tenth");
 
-	cout << "    after 'ninth = vector<int>()' :" << endl;
+	cout << "ninth = vector<int>():" << endl;
 	ninth = vector<int>();
-	cout << "		size  " << "max_size      " << "capacity  " << "empty" << endl;
-	cout << "	ninth   " << hex << ninth.size() << dec << "     " << ninth.max_size() << "    " << ninth.capacity() << "         " << ninth.empty() << endl;
-	cout << "	ninth: ";
-	for (iter = ninth.begin(); iter != ninth.end(); iter++)
-	{
-		cout << *iter << " ";
-	}
-	cout << endl;
+	Output(ninth, "ninth");
+
 }
 
 void VectorTest::CapacityTest()
@@ -233,72 +116,65 @@ void VectorTest::CapacityTest()
 	vector<int> first;
 	vector<int> second(5);
 
-	cout << "        size  " << "    sizeof    " << "max_size      " << "capacity  " << "empty" << endl;
-	cout << "first   " <<  first.size() << "	  " << sizeof(first) << "        " << hex << first.max_size() << dec << "      " << first.capacity() << "         " << first.empty() << endl;
-	cout << "second  " <<  second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "         " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(first, "first ");
+	Output(second, "second");
 
-	cout << "----second.resize(10);----" << endl;
+	cout << "push_back(8):" << endl;
+	second.push_back(8);
+	Output(second, "second");
+
+
+	cout << "resize(10):" << endl;
 	second.resize(10);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.push_back(8);----" << endl;
+
+	cout << "push_back(8):" << endl;
 	second.push_back(8);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.resize(15,5);----" << endl;
+
+	cout << "resize(15,5):" << endl;
 	second.resize(15, 5);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.push_back(8);----" << endl;
+
+	cout << "push_back(8):" << endl;
 	second.push_back(8);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.resize(12,8);----" << endl;
+
+
+	cout << "resize(12,8):" << endl;
 	second.resize(12, 8);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
 
-	cout << "----second.push_back(10);----" << endl;
+
+	cout << "push_back(10):" << endl;
 	second.push_back(10);  
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.pop_back();----" << endl;
+
+	cout << "pop_back():" << endl;
 	second.pop_back();
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.reserve(88);----" << endl;
+
+	cout << "reserve(88):" << endl;
 	second.reserve(88);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.reserve(5);----" << endl;
+
+	cout << "reserve(5):" << endl;
 	second.reserve(5);
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----second.shrink_to_fit();----" << endl;
+
+	cout << "shrink_to_fit():" << endl;
 	second.shrink_to_fit();
-	cout << "second  " << second.size() << "	  " << sizeof(second) << "        " << hex << second.max_size() << dec << "      " << second.capacity() << "        " << second.empty() << endl;
-	for (auto it : second) cout << it << " ";
-	cout << endl;
+	Output(second, "second");
+
 
 }
 
@@ -352,160 +228,105 @@ initializer list (3)
 void assign (initializer_list<value_type> il);
 */
 
-	cout << "----vector::assign()----" << endl;
+	cout << "assign():" << endl;
 
 	first.assign(7, 99);      // 7 ints with a value of 99
-	for (auto it = first.cbegin(); it != first.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
+	Output(first, "first ");
+
 	
 	int myInt[6] = { 0, 1, 2, 3, 4, 5 };
 	third.assign(myInt, myInt + sizeof(myInt) / sizeof(int));  // assigning from array.
-	for (auto it = third.cbegin(); it != third.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
+	Output(third, "third ");
+
 
 	vector<int>::iterator it = third.begin() + 1;
 	second.assign(it, third.end() - 1);     // the 4 central values of third
-	for (auto it = second.cbegin(); it != second.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
+	Output(second, "second");
 
-	cout << "----vector::erase()----" << endl;
+
+	cout << "erase (first, last):" << endl;
 	vector<int> vec{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "----iterator vector::erase (const_iterator first, const_iterator last);----" << endl;
+	Output(vec, "vec");
 	vec.erase(vec.begin() + 3, vec.end() - 3);
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  "  << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec");
 
-	cout << "----iterator vector::erase (const_iterator position);----" << endl;
+
+
+	cout << "erase(position):" << endl;
 	vec.erase(vec.begin());
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec");
 
-	cout << "----void vector::pop_back();----" << endl;
+
+
+	cout << "pop_back():" << endl;
 	vec.pop_back();
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec");
 
-	cout << "----void vector::shrink_to_fit();----" << endl;
+
+
+	cout << "shrink_to_fit():" << endl;
 	vec.shrink_to_fit();
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec");
 
-	cout << "----void vector::push_back();----" << endl;
+
+
+	cout << "push_back():" << endl;
 	vec.push_back(99);
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec");
+	
 
-	cout << "----void vector::swap (vector& x);----" << endl;
+
+	cout << "swap():" << endl;
 	vector<int> vec1(10, 3);
+	Output(vec, "vec ");
+	Output(vec1, "vec1");
 	vec.swap(vec1);
-	cout << "vec : ";
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "vec1: ";
-	for (auto it = vec1.cbegin(); it != vec1.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
+	Output(vec, "vec ");
+	Output(vec1, "vec1");
 
-	cout << "----void vector::push_back();----" << endl;
+
+
+	cout << "push_back():" << endl;
 	vec.push_back(66);
-	cout << "vec : ";
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "vec1: ";
-	for (auto it = vec1.cbegin(); it != vec1.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec ");
+	Output(vec1, "vec1");
 
-	cout << "----ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& val);----" << endl;
+
+
+	cout << "remove(first, last, val):" << endl;
 	auto ite = remove(vec.begin(), vec.end(), 3);  //remove() just move elements to be removed backwords, they are not deleted
-	cout << "vec : ";
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "vec1: ";
-	for (auto it = vec1.cbegin(); it != vec1.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec ");
+
+	
+	cout << "erase(first, last):" << endl;
 	vec.erase(ite, vec.end());
-	cout << "vec : ";
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "vec1: ";
-	for (auto it = vec1.cbegin(); it != vec1.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec ");
 
 
-	cout << "----vector::clear()----" << endl;
+
+	cout << "clear():" << endl;
 	vec.clear();
-	for (auto it = vec.cbegin(); it != vec.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vec.size() << "     " << vec.capacity() << "         " << hex << vec.max_size() << dec << "        " << vec.empty() << endl;
+	Output(vec, "vec ");
 
 	/*
 	template <class... Args>
 	iterator emplace (const_iterator position, Args&&... args);
 	*/
-	cout << "----vector::emplace (const_iterator position, Args&&... args)----" << endl;
+	cout << "emplace (position, Args&&... args):" << endl;
 	vector<int> vecEmplace = { 1, 2, 3, 4 };
-	for (auto it = vecEmplace.cbegin(); it != vecEmplace.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vecEmplace.size() << "     " << vecEmplace.capacity() << "         " << hex << vecEmplace.max_size() << dec << "        " << vecEmplace.empty() << endl;
+	Output(vecEmplace, "vecEmplace");
 	vecEmplace.emplace(vecEmplace.cbegin() + 1, 99);
-	for (auto it = vecEmplace.cbegin(); it != vecEmplace.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vecEmplace.size() << "     " << vecEmplace.capacity() << "         " << hex << vecEmplace.max_size() << dec << "        " << vecEmplace.empty() << endl;
+	Output(vecEmplace, "vecEmplace");
 
 	/*
 	template <class... Args>
 		void emplace_back (Args&&... args);
 	*/
-	cout << "----vector::emplace_back (Args&&... args)----" << endl;
+	cout << "emplace_back (Args&&... args):" << endl;
 	vector<int> vecEmplaceBack = { 1, 2, 3, 4 };
-	for (auto it = vecEmplaceBack.cbegin(); it != vecEmplaceBack.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vecEmplaceBack.size() << "     " << vecEmplaceBack.capacity() << "         " << hex << vecEmplaceBack.max_size() << dec << "        " << vecEmplaceBack.empty() << endl;
+	Output(vecEmplaceBack, "vecEmplaceBack");
 	vecEmplaceBack.emplace_back(99);
-	for (auto it = vecEmplaceBack.cbegin(); it != vecEmplaceBack.cend(); it++)
-		cout << *it << " ";
-	cout << endl;
-	cout << "    size  " << "capacity  " << "max_size      " << "empty" << endl;
-	cout << "vec " << vecEmplaceBack.size() << "     " << vecEmplaceBack.capacity() << "         " << hex << vecEmplaceBack.max_size() << dec << "        " << vecEmplaceBack.empty() << endl;
+	Output(vecEmplaceBack, "vecEmplaceBack");
 
 }
 
@@ -553,3 +374,33 @@ void VectorTest::GetAllocatorTest()
 		vec.get_allocator().destroy(&p[i]);
 	vec.get_allocator().deallocate(p, 5);
 }
+
+
+void VectorTest::Output(std::vector<int> myVector, std::string name)
+{
+	cout << name << ": ";
+	if (!myVector.empty())
+	{
+		cout << "(" << std::setw(3) << myVector.size() << "," << std::setw(3) << myVector.capacity() << "," << std::setw(3) << hex << myVector.max_size() << dec << ") ";
+		for (auto it : myVector) cout << it << " ";
+		cout << endl;
+	}
+	else
+	{
+		cout << name << " is empty." << endl;
+	}
+}
+
+
+
+void VectorTest::Output(std::vector<double> myVector, std::string name)
+{
+
+}
+
+void VectorTest::Output(std::vector<std::string> myVector, std::string name)
+{
+
+}
+
+
