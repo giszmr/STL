@@ -166,6 +166,7 @@
     <ClInclude Include="queue_test.h" />
     <ClInclude Include="stack_test.h" />
     <ClInclude Include="string_test.h" />
+    <ClInclude Include="unordered_map_test.h" />
     <ClInclude Include="vector_test.h" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +188,7 @@
     <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="STL_Main.cpp" />
     <ClCompile Include="string_test.cpp" />
+    <ClCompile Include="unordered_map_test.cpp" />
     <ClCompile Include="vector_test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

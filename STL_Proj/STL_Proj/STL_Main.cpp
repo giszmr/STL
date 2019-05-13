@@ -15,6 +15,7 @@
 #include "map_test.h"
 #include "multimap_test.h"
 #include "compare_test.h"
+#include "unordered_map_test.h"
 
 using namespace STL_Test;
 using namespace std;
@@ -115,10 +116,22 @@ int main()
 	//mmt.OperationsTest();
 
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//CompareTest cpt;
+	//cpt.Test();
+
+
+
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	CompareTest cpt;
-	cpt.Test();
+	UnorderedMapTest umt;
+	umt.ConstructorTest();
+	umt.ModifiersTest();
+	umt.ObserversTest();
+	umt.OperationsTest();
+	umt.BucketsTest();
+	umt.HashPolicyTest();
 
 
 	return 0;
