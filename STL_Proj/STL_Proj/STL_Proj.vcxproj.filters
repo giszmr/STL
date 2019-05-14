@@ -57,6 +57,9 @@
     <ClInclude Include="unordered_map_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="emplace_insert_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="unordered_map_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="emplace_insert_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -157,6 +157,7 @@
     <ClInclude Include="array_test.h" />
     <ClInclude Include="compare_test.h" />
     <ClInclude Include="deque_test.h" />
+    <ClInclude Include="emplace_insert_test.h" />
     <ClInclude Include="forward_list_test.h" />
     <ClInclude Include="list_test.h" />
     <ClInclude Include="map_test.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="array_test.cpp" />
     <ClCompile Include="compare_test.cpp" />
     <ClCompile Include="deque_test.cpp" />
+    <ClCompile Include="emplace_insert_test.cpp" />
     <ClCompile Include="forward_list_test.cpp" />
     <ClCompile Include="list_test.cpp" />
     <ClCompile Include="map_test.cpp" />
