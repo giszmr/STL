@@ -49,9 +49,7 @@ namespace STL_Test
 		void ConstructorTest();
 		void ModifiersTest();
 		void ObserversTest();
-		void OperationsTest();
-		void BucketsTest();
-		void HashPolicyTest();
+		void ElementAccessTest();
 	private:
 		std::unordered_map<std::string, int> merge(std::unordered_map<std::string, int> map1, std::unordered_map<std::string, int> map2);
 		void Output(std::unordered_map<std::string, int> mymap, std::string name);

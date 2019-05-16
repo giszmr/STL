@@ -160,7 +160,7 @@ void EmaplaceInsertTest::OutputIter(std::vector<MyBook> myVector)
 void EmaplaceInsertTest::OutputIndex(std::vector<MyBook> myVector)
 {
 	std::cout  << "OOOOOOOOutputIndex:" << std::endl;
-	for (int i = 0; i < myVector.size(); i++)
+	for (size_t i = 0; i < myVector.size(); i++)
 	{
 		std::cout << std::right << std::setw(20) << "(" << std::left << std::setw(18)<< (myVector[i].GetName().empty() ? "NULL" : myVector[i].GetName()) << "," << myVector[i].GetPrice() << ")" << std::endl;
 	}
@@ -358,7 +358,7 @@ Deconstructor:     (Adel              ,5)
 Deconstructor:     (NULL              ,0)
 Deconstructor:     (Helo              ,5)
 ------
-Copy Constructor:  (Adel              ,5)               //zmr: Copy the element for the first time?
+Copy Constructor:  (Adel              ,5)               //zmr: Copy the element for the first time
 Copy Constructor:  (NULL              ,0)
 Copy Constructor:  (Helo              ,5)
 OOOOOOOOutputIter:

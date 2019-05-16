@@ -51,9 +51,9 @@ int main()
 	//vt.GetAllocatorTest();
 
 
-	/*cout << "======================================" << endl;
-	cout << "======================================" << endl;
-	DequeTest dt;*/
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//DequeTest dt;
 	//dt.MemberFunctionsTest();
 	//dt.CapacityTest();
 	//dt.ElementAccessTest();
@@ -122,21 +122,19 @@ int main()
 	//CompareTest cpt;
 	//cpt.Test();
 
-	cout << "======================================" << endl;
-	cout << "======================================" << endl;
-	EmaplaceInsertTest eit;
-	eit.Test();
-
-
 	//cout << "======================================" << endl;
 	//cout << "======================================" << endl;
-	//UnorderedMapTest umt;
-	//umt.ConstructorTest();
-	//umt.ModifiersTest();
-	//umt.ObserversTest();
-	//umt.OperationsTest();
-	//umt.BucketsTest();
-	//umt.HashPolicyTest();
+	//EmaplaceInsertTest eit;
+	//eit.Test();
+
+
+	cout << "======================================" << endl;
+	cout << "======================================" << endl;
+	UnorderedMapTest umt;
+	umt.ConstructorTest();
+	umt.ModifiersTest();
+	umt.ObserversTest();
+	umt.ElementAccessTest();
 
 
 	return 0;
