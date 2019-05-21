@@ -99,7 +99,7 @@ void ForwardListTest::OperationsTest()
 }
 
 
-void ForwardListTest::OutputList(std::forward_list<int> myForwardList, std::string name)
+void ForwardListTest::OutputList(std::forward_list<int>& myForwardList, std::string name)
 {
 	std::cout << name << " : ";
 	for (auto it = myForwardList.cbegin(); it != myForwardList.cend(); it++)

@@ -33,7 +33,7 @@ void CompareTest::Test()
 }
 
 
-void CompareTest::Output(std::map<MyKey, std::string> myMap, std::string name)
+void CompareTest::Output(std::map<MyKey, std::string>& myMap, std::string name)
 {
 	std::cout << name << "(" << myMap.size() << ",0x" << std::hex << myMap.max_size() << std::dec << ")" << " : ";
 	if (myMap.empty())
@@ -51,7 +51,7 @@ void CompareTest::Output(std::map<MyKey, std::string> myMap, std::string name)
 }
 
 
-void CompareTest::Output(std::map<MyKey, std::string, cmpKey> myMap, std::string name)
+void CompareTest::Output(std::map<MyKey, std::string, cmpKey>& myMap, std::string name)
 {
 	std::cout << name << "(" << myMap.size() << ",0x" << std::hex << myMap.max_size() << std::dec << ")" << " : ";
 	if (myMap.empty())

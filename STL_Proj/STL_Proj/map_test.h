@@ -21,10 +21,10 @@ namespace STL_Test
 		void ObserversTest();
 		void OperationsTest();
 	private:
-		void Output(std::map<char, int> mymap, std::string name);
-		void OutputR(std::map<char, int> mymap, std::string name);
-		void Output(std::map<std::string, double> mymap, std::string name);
-		void Output(std::map<std::string, double, std::greater<std::string>> mymap, std::string name);
+		void Output(std::map<char, int>& mymap, std::string name);
+		void OutputR(std::map<char, int>& mymap, std::string name);
+		void Output(std::map<std::string, double>& mymap, std::string name);
+		void Output(std::map<std::string, double, std::greater<std::string>>& mymap, std::string name);
 	};
 }
 

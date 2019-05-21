@@ -60,6 +60,9 @@
     <ClInclude Include="emplace_insert_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="set_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="emplace_insert_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="set_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

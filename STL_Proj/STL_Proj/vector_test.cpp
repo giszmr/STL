@@ -376,7 +376,7 @@ void VectorTest::GetAllocatorTest()
 }
 
 
-void VectorTest::Output(std::vector<int> myVector, std::string name)
+void VectorTest::Output(std::vector<int>& myVector, std::string name)
 {
 	cout << name << ": ";
 	if (!myVector.empty())
@@ -393,12 +393,12 @@ void VectorTest::Output(std::vector<int> myVector, std::string name)
 
 
 
-void VectorTest::Output(std::vector<double> myVector, std::string name)
+void VectorTest::Output(std::vector<double>& myVector, std::string name)
 {
 
 }
 
-void VectorTest::Output(std::vector<std::string> myVector, std::string name)
+void VectorTest::Output(std::vector<std::string>& myVector, std::string name)
 {
 
 }

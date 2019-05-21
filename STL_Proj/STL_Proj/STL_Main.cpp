@@ -17,6 +17,7 @@
 #include "compare_test.h"
 #include "unordered_map_test.h"
 #include "emplace_insert_test.h"
+#include "set_test.h"
 
 using namespace STL_Test;
 using namespace std;
@@ -128,14 +129,23 @@ int main()
 	//eit.Test();
 
 
-	cout << "======================================" << endl;
-	cout << "======================================" << endl;
-	UnorderedMapTest umt;
-	umt.ConstructorTest();
-	umt.ModifiersTest();
-	umt.ObserversTest();
-	umt.ElementAccessTest();
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//UnorderedMapTest umt;
+	//umt.ConstructorTest();
+	//umt.ModifiersTest();
+	//umt.ObserversTest();
+	//umt.ElementAccessTest();
 
+
+
+	cout << "======================================" << endl;
+	cout << "======================================" << endl;
+	SetTest sett;
+	sett.ConstructorTest();
+	sett.ModifiersTest();
+	sett.SetUnionTest();
+	sett.SetIntersectionTest();
 
 	return 0;
 }

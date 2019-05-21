@@ -17,7 +17,7 @@ namespace STL_Test
 		void ModifiersTest();
 		void OperationsTest();
 	private:
-		void OutputList(std::forward_list<int> myForwardList, std::string name);
+		void OutputList(std::forward_list<int>& myForwardList, std::string name);
 	};
 }
 

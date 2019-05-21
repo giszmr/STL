@@ -22,9 +22,9 @@ namespace STL_Test
 		void ElementAccessTest();
 		void GetAllocatorTest();
 	private:
-		void Output(std::vector<int> myVector, std::string name);
-		void Output(std::vector<double> myVector, std::string name);
-		void Output(std::vector<std::string> myVector, std::string name);
+		void Output(std::vector<int>& myVector, std::string name);
+		void Output(std::vector<double>& myVector, std::string name);
+		void Output(std::vector<std::string>& myVector, std::string name);
 	};
 }
 

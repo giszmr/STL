@@ -177,7 +177,7 @@ void MultimapTest::OperationsTest()
 
 
 
-void MultimapTest::Output(std::multimap<int, std::string> myMultimap, std::string name)
+void MultimapTest::Output(std::multimap<int, std::string>& myMultimap, std::string name)
 {
 	std::cout << name << "(" << myMultimap.size() << ",0x" << std::hex << myMultimap.max_size() << std::dec << ")" << " : ";
 	if (myMultimap.empty())
@@ -196,7 +196,7 @@ void MultimapTest::Output(std::multimap<int, std::string> myMultimap, std::strin
 
 
 
-void MultimapTest::OutputR(std::multimap<int, std::string> myMultimap, std::string name)
+void MultimapTest::OutputR(std::multimap<int, std::string>& myMultimap, std::string name)
 {
 	std::cout << name << "(" << myMultimap.size() << ",0x" << std::hex << myMultimap.max_size() << std::dec << ")" << " : ";
 	if (myMultimap.empty())
@@ -215,7 +215,7 @@ void MultimapTest::OutputR(std::multimap<int, std::string> myMultimap, std::stri
 
 
 
-void MultimapTest::Output(std::multimap<int, double> myMultimap, std::string name)
+void MultimapTest::Output(std::multimap<int, double>& myMultimap, std::string name)
 {
 	std::cout << name << "(" << myMultimap.size() << ",0x" << std::hex << myMultimap.max_size() << std::dec << ")" << " : ";
 	if (myMultimap.empty())

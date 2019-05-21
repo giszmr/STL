@@ -35,8 +35,8 @@ namespace STL_Test
 		~EmaplaceInsertTest();
 		void Test();
 	private:
-		void OutputIter(std::vector<MyBook> myVector);
-		void OutputIndex(std::vector<MyBook> myVector);
+		void OutputIter(std::vector<MyBook>& myVector);
+		void OutputIndex(std::vector<MyBook>& myVector);
 	};
 
 }

@@ -173,7 +173,7 @@ void MapTest::OperationsTest()
 
 
 
-void MapTest::Output(std::map<char, int> mymap, std::string name)
+void MapTest::Output(std::map<char, int>& mymap, std::string name)
 {
 	std::cout << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << ")" << " : ";
 	if (mymap.empty())
@@ -192,7 +192,7 @@ void MapTest::Output(std::map<char, int> mymap, std::string name)
 
 
 
-void MapTest::OutputR(std::map<char, int> mymap, std::string name)
+void MapTest::OutputR(std::map<char, int>& mymap, std::string name)
 {
 	std::cout << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << ")" << " : ";
 	if (mymap.empty())
@@ -211,7 +211,7 @@ void MapTest::OutputR(std::map<char, int> mymap, std::string name)
 
 
 
-void MapTest::Output(std::map<std::string, double> mymap, std::string name)
+void MapTest::Output(std::map<std::string, double>& mymap, std::string name)
 {
 	std::cout << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << ")" << " : ";
 	if (mymap.empty())
@@ -228,7 +228,7 @@ void MapTest::Output(std::map<std::string, double> mymap, std::string name)
 	std::cout << std::endl;
 }
 
-void MapTest::Output(std::map<std::string, double, std::greater<std::string>> mymap, std::string name)
+void MapTest::Output(std::map<std::string, double, std::greater<std::string>>& mymap, std::string name)
 {
 	std::cout << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << ")" << " : ";
 	if (mymap.empty())

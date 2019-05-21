@@ -59,8 +59,8 @@ namespace STL_Test
 		~CompareTest() {};
 		void Test();
 	private:
-		void Output(std::map<MyKey, std::string> myMap, std::string name);
-		void Output(std::map<MyKey, std::string, cmpKey> myMap, std::string name);
+		void Output(std::map<MyKey, std::string>& myMap, std::string name);
+		void Output(std::map<MyKey, std::string, cmpKey>& myMap, std::string name);
 	};
 }
 

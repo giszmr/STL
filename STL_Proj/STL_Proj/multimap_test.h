@@ -21,9 +21,9 @@ namespace STL_Test
 		void ObserversTest();
 		void OperationsTest();
 	private:
-		void Output(std::multimap<int, std::string> myMultimap, std::string name);
-		void OutputR(std::multimap<int, std::string> myMultimap, std::string name);
-		void Output(std::multimap<int, double> myMultimap, std::string name);
+		void Output(std::multimap<int, std::string>& myMultimap, std::string name);
+		void OutputR(std::multimap<int, std::string>& myMultimap, std::string name);
+		void Output(std::multimap<int, double>& myMultimap, std::string name);
 	};
 }
 

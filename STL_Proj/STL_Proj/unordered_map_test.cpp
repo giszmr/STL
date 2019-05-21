@@ -79,7 +79,7 @@ void UnorderedMapTest::ConstructorTest()
 	Output(eleventh, "eleventh");
 
 }
-std::unordered_map<std::string, int> UnorderedMapTest::merge(std::unordered_map<std::string, int> map1, std::unordered_map<std::string, int> map2)
+std::unordered_map<std::string, int> UnorderedMapTest::merge(std::unordered_map<std::string, int>& map1, std::unordered_map<std::string, int>& map2)
 {
 	std::unordered_map<std::string, int> tmp(map1);
 	//Each element is inserted only if its key is not equivalent to the key of any other element already in the container 
@@ -237,7 +237,7 @@ void UnorderedMapTest::ElementAccessTest()
 }
 
 
-void UnorderedMapTest::Output(std::unordered_map<std::string, int> mymap, std::string name)
+void UnorderedMapTest::Output(std::unordered_map<std::string, int>& mymap, std::string name)
 {
 	//bucket_size of a bucket will be 8/16/32/64...
 	std::cout <<  std::setw(7) << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << "; " << std::setw(2) << mymap.bucket_count() << ",0x" << std::hex << mymap.max_bucket_count() << std::dec << ")" << " : ";
@@ -257,7 +257,7 @@ void UnorderedMapTest::Output(std::unordered_map<std::string, int> mymap, std::s
 
 
 
-void UnorderedMapTest::Output(std::unordered_map<Name, int, Hash_Name> mymap, std::string name)
+void UnorderedMapTest::Output(std::unordered_map<Name, int, Hash_Name>& mymap, std::string name)
 {
 	std::cout << std::setw(7) << name << "(" << mymap.size() << ",0x" << std::hex << mymap.max_size() << std::dec << "; " << std::setw(2) << mymap.bucket_count() << ",0x" << std::hex << mymap.max_bucket_count() << std::dec << ")" << " : ";
 	if (mymap.empty())

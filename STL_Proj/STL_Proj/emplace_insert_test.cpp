@@ -147,7 +147,7 @@ void EmaplaceInsertTest::Test()
 }
 
 
-void EmaplaceInsertTest::OutputIter(std::vector<MyBook> myVector)
+void EmaplaceInsertTest::OutputIter(std::vector<MyBook>& myVector)
 {
 	std::cout  << "OOOOOOOOutputIter:" << std::endl;
 	for (auto iter : myVector)
@@ -157,7 +157,7 @@ void EmaplaceInsertTest::OutputIter(std::vector<MyBook> myVector)
 }
 
 
-void EmaplaceInsertTest::OutputIndex(std::vector<MyBook> myVector)
+void EmaplaceInsertTest::OutputIndex(std::vector<MyBook>& myVector)
 {
 	std::cout  << "OOOOOOOOutputIndex:" << std::endl;
 	for (size_t i = 0; i < myVector.size(); i++)

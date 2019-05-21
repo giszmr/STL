@@ -51,9 +51,9 @@ namespace STL_Test
 		void ObserversTest();
 		void ElementAccessTest();
 	private:
-		std::unordered_map<std::string, int> merge(std::unordered_map<std::string, int> map1, std::unordered_map<std::string, int> map2);
-		void Output(std::unordered_map<std::string, int> mymap, std::string name);
-		void Output(std::unordered_map<Name, int, Hash_Name> mymap, std::string name);
+		std::unordered_map<std::string, int> merge(std::unordered_map<std::string, int>& map1, std::unordered_map<std::string, int>& map2);
+		void Output(std::unordered_map<std::string, int>& mymap, std::string name);
+		void Output(std::unordered_map<Name, int, Hash_Name>& mymap, std::string name);
 	};
 }
 
