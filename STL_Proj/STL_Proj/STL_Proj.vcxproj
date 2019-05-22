@@ -166,6 +166,7 @@
     <ClInclude Include="priority_queue_test.h" />
     <ClInclude Include="queue_test.h" />
     <ClInclude Include="set_test.h" />
+    <ClInclude Include="smart_pointer_test.h" />
     <ClInclude Include="stack_test.h" />
     <ClInclude Include="string_test.h" />
     <ClInclude Include="unordered_map_test.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="priority_queue_test.cpp" />
     <ClCompile Include="queue_test.cpp" />
     <ClCompile Include="set_test.cpp" />
+    <ClCompile Include="smart_pointer_test.cpp" />
     <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="STL_Main.cpp" />
     <ClCompile Include="string_test.cpp" />

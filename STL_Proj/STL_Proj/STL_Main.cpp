@@ -18,6 +18,8 @@
 #include "unordered_map_test.h"
 #include "emplace_insert_test.h"
 #include "set_test.h"
+#include "smart_pointer_test.h"
+
 
 using namespace STL_Test;
 using namespace std;
@@ -139,13 +141,25 @@ int main()
 
 
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//SetTest sett;
+	//sett.ConstructorTest();
+	//sett.ModifiersTest();
+	//sett.SetUnionTest();
+	//sett.SetIntersectionTest();
+
+
+
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	SetTest sett;
-	sett.ConstructorTest();
-	sett.ModifiersTest();
-	sett.SetUnionTest();
-	sett.SetIntersectionTest();
+	SmartPointerTest spt;
+	spt.AutoPointerTest();
+	spt.SharedPointerTest();
+	spt.WeakPointerTest();
+	spt.UniquePointerTest();
+	spt.NULL_nullptr_Test();
+
 
 	return 0;
 }
