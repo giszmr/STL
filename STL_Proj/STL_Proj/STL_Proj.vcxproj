@@ -159,14 +159,17 @@
     <ClInclude Include="deque_test.h" />
     <ClInclude Include="emplace_insert_test.h" />
     <ClInclude Include="forward_list_test.h" />
+    <ClInclude Include="friend_test.h" />
     <ClInclude Include="list_test.h" />
     <ClInclude Include="map_test.h" />
     <ClInclude Include="multimap_test.h" />
+    <ClInclude Include="override_overwrite_test.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="priority_queue_test.h" />
     <ClInclude Include="queue_test.h" />
     <ClInclude Include="set_test.h" />
     <ClInclude Include="smart_pointer_test.h" />
+    <ClInclude Include="sort_test.h" />
     <ClInclude Include="stack_test.h" />
     <ClInclude Include="string_test.h" />
     <ClInclude Include="unordered_map_test.h" />
@@ -178,9 +181,13 @@
     <ClCompile Include="deque_test.cpp" />
     <ClCompile Include="emplace_insert_test.cpp" />
     <ClCompile Include="forward_list_test.cpp" />
+    <ClCompile Include="friend_test.cpp" />
     <ClCompile Include="list_test.cpp" />
     <ClCompile Include="map_test.cpp" />
     <ClCompile Include="multimap_test.cpp" />
+    <ClCompile Include="override_overwrite_test.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/d1 reportSingleClassLayoutDerive %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -191,6 +198,7 @@
     <ClCompile Include="queue_test.cpp" />
     <ClCompile Include="set_test.cpp" />
     <ClCompile Include="smart_pointer_test.cpp" />
+    <ClCompile Include="sort_test.cpp" />
     <ClCompile Include="stack_test.cpp" />
     <ClCompile Include="STL_Main.cpp" />
     <ClCompile Include="string_test.cpp" />

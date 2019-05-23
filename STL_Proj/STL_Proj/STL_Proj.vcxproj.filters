@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\others">
+      <UniqueIdentifier>{54f894e5-80de-4c28-b9db-0213d9f45ada}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -63,8 +66,17 @@
     <ClInclude Include="set_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="smart_pointer_test.h">
+    <ClInclude Include="sort_test.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="override_overwrite_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="friend_test.h">
+      <Filter>Source Files\others</Filter>
+    </ClInclude>
+    <ClInclude Include="smart_pointer_test.h">
+      <Filter>Source Files\others</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,8 +131,17 @@
     <ClCompile Include="set_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="smart_pointer_test.cpp">
+    <ClCompile Include="sort_test.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="override_overwrite_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="friend_test.cpp">
+      <Filter>Source Files\others</Filter>
+    </ClCompile>
+    <ClCompile Include="smart_pointer_test.cpp">
+      <Filter>Source Files\others</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

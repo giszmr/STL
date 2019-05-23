@@ -19,6 +19,8 @@
 #include "emplace_insert_test.h"
 #include "set_test.h"
 #include "smart_pointer_test.h"
+#include "friend_test.h"
+#include "sort_test.h"
 
 
 using namespace STL_Test;
@@ -151,14 +153,33 @@ int main()
 
 
 
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//SmartPointerTest spt;
+	//spt.AutoPointerTest();
+	//spt.SharedPointerTest();
+	//spt.WeakPointerTest();
+	//spt.UniquePointerTest();
+	//spt.NULL_nullptr_Test();
+	
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//Person person("Hello! ", "Tom", 30);
+	//Host host;
+	//host.Introduce(person);
+	//
+
+
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	SmartPointerTest spt;
-	spt.AutoPointerTest();
-	spt.SharedPointerTest();
-	spt.WeakPointerTest();
-	spt.UniquePointerTest();
-	spt.NULL_nullptr_Test();
+	SortTest sorttest;
+	sorttest.DefaultSortTest();
+	sorttest.StableSortTest();
+	sorttest.PartialSortTest();
+	sorttest.ParticalSortCopyTest();
+
+
 
 
 	return 0;
