@@ -64,6 +64,7 @@ namespace STL_Test
 		void StableSortTest();
 		void PartialSortTest();
 		void ParticalSortCopyTest();
+		void NthElementTest();
 	private:
 		void Output(std::vector<int>& myVector, std::string name);
 		void Output(std::vector<Price>& myVector, std::string name);

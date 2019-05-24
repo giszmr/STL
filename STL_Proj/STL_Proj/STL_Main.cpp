@@ -178,6 +178,7 @@ int main()
 	sorttest.StableSortTest();
 	sorttest.PartialSortTest();
 	sorttest.ParticalSortCopyTest();
+	sorttest.NthElementTest();
 
 
 

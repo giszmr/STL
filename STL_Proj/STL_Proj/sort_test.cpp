@@ -84,16 +84,67 @@ void SortTest::StableSortTest()
 
 void SortTest::PartialSortTest()
 {
+	std::cout << "\n****************PartialSortTest*****************" << std::endl;
 
+
+	int count = 5;
+	std::vector<int> numbers{ 22, 7, 93, 45, 19, 56, 88, 12, 8, 7, 15, 10 };
+	Output(numbers, "numbers");
+
+	std::cout << "\npartial_sort:" << std::endl;
+	std::partial_sort(numbers.begin(), numbers.begin() + count, numbers.end());
+	Output(numbers, "numbers");
+
+
+	std::cout << "\npartial_sort + compare:" << std::endl;
+	std::partial_sort(numbers.begin(), numbers.begin() + count, numbers.end(), std::greater<int>());
+	Output(numbers, "numbers");
 }
 
 void SortTest::ParticalSortCopyTest()
 {
+	std::cout << "\n****************ParticalSortCopyTest*****************" << std::endl;
+
+
+	int count = 5;
+	std::vector<int> ret(5);
+	std::vector<int> numbers{ 22, 7, 93, 45, 19, 56, 88, 12, 8, 7, 15, 10 };
+	Output(numbers, "numbers");
+	Output(ret, "ret");
+
+
+	std::cout << "\npartial_sort_copy:" << std::endl;
+	std::partial_sort_copy(numbers.begin(), numbers.end(), ret.begin(), ret.end());
+	Output(numbers, "numbers");
+	Output(ret, "ret");
+
+
+	std::cout << "\npartial_sort_copy + compare:" << std::endl;
+	std::partial_sort_copy(numbers.begin(), numbers.end(), ret.begin(), ret.end(), std::greater<int>());
+	Output(numbers, "numbers");
+	Output(ret, "ret");
 
 }
 
 
+void SortTest::NthElementTest()
+{
+	std::cout << "\n****************NthElementTest*****************" << std::endl;
 
+
+	int count = 9;
+	std::vector<int> numbers{ 22, 7, 93, 45, 19, 56, 88, 12, 8, 7, 15, 10, 4, 89, 64, 55, 24, 66, 29 };
+	Output(numbers, "numbers");
+
+	std::cout << "\nnth_element:" << std::endl;
+	std::nth_element(numbers.begin(), numbers.begin() + count, numbers.end());
+	Output(numbers, "numbers");
+
+
+	std::cout << "\nnth_element + compare:" << std::endl;
+	std::nth_element(numbers.begin(), numbers.begin() + count, numbers.end(), std::greater<int>());
+	Output(numbers, "numbers");
+}
 
 
 void SortTest::Output(std::vector<int>& myVector, std::string name)
