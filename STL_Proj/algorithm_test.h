@@ -1,5 +1,5 @@
-#ifndef _SORT_TEST_H_
-#define _SORT_TEST_H_
+#ifndef _ALGORITHM_TEST_H_
+#define _ALGORITHM_TEST_H_
 
 
 #include <string>
@@ -55,16 +55,25 @@ namespace STL_Test
 
 
 
-	class SortTest
+	class AlgorithmTest
 	{
 	public:
-		SortTest() {};
-		~SortTest() {};
+		AlgorithmTest() {};
+		~AlgorithmTest() {};
 		void DefaultSortTest();
 		void StableSortTest();
 		void PartialSortTest();
 		void ParticalSortCopyTest();
 		void NthElementTest();
+		void PartitionTest();
+		void PartitionCopyTest();
+		void IsSortedUntilTest();
+		void FindIfTest();
+		void AdjacentFindTest();
+		void EqualTest();
+		void SetUnionTest(); //std::set_union. Other algorithms: std::set_diffenence; std::set_intersection.
+		void HeapTest();
+
 	private:
 		void Output(std::vector<int>& myVector, std::string name);
 		void Output(std::vector<Price>& myVector, std::string name);

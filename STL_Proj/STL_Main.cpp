@@ -20,7 +20,8 @@
 #include "set_test.h"
 #include "smart_pointer_test.h"
 #include "friend_test.h"
-#include "sort_test.h"
+#include "algorithm_test.h"
+#include "miscellaneous_test.h"
 
 
 using namespace STL_Test;
@@ -168,19 +169,33 @@ int main()
 	//Person person("Hello! ", "Tom", 30);
 	//Host host;
 	//host.Introduce(person);
-	//
+
+
+
+	//cout << "======================================" << endl;
+	//cout << "======================================" << endl;
+	//AlgorithmTest algorithmtest;
+	//algorithmtest.DefaultSortTest();
+	//algorithmtest.StableSortTest();
+	//algorithmtest.PartialSortTest();
+	//algorithmtest.ParticalSortCopyTest();
+	//algorithmtest.NthElementTest();
+	//algorithmtest.PartitionTest();
+	//algorithmtest.PartitionCopyTest();
+	//algorithmtest.IsSortedUntilTest();
+	//algorithmtest.FindIfTest();
+	//algorithmtest.AdjacentFindTest();
+	//algorithmtest.EqualTest();
+	//algorithmtest.SetUnionTest();
+	//algorithmtest.HeapTest();
+
 
 
 	cout << "======================================" << endl;
 	cout << "======================================" << endl;
-	SortTest sorttest;
-	sorttest.DefaultSortTest();
-	sorttest.StableSortTest();
-	sorttest.PartialSortTest();
-	sorttest.ParticalSortCopyTest();
-	sorttest.NthElementTest();
-
-
+	MiscellaneousTest mist;
+	mist.IotaTest();
+	mist.AccumulateTest();
 
 
 	return 0;

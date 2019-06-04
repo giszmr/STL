@@ -66,9 +66,6 @@
     <ClInclude Include="set_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="sort_test.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="override_overwrite_test.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -77,6 +74,15 @@
     </ClInclude>
     <ClInclude Include="smart_pointer_test.h">
       <Filter>Source Files\others</Filter>
+    </ClInclude>
+    <ClInclude Include="algorithm_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="random_test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="miscellaneous_test.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -131,9 +137,6 @@
     <ClCompile Include="set_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sort_test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="override_overwrite_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -142,6 +145,15 @@
     </ClCompile>
     <ClCompile Include="smart_pointer_test.cpp">
       <Filter>Source Files\others</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="random_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="miscellaneous_test.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
