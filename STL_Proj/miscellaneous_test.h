@@ -19,6 +19,7 @@ namespace STL_Test
 		~MiscellaneousTest() {};
 		void IotaTest();
 		void AccumulateTest();
+		void InnerProductTest();
 
 	private:
 		void Output(std::vector<int>& myVector, std::string name);

@@ -196,6 +196,7 @@ int main()
 	MiscellaneousTest mist;
 	mist.IotaTest();
 	mist.AccumulateTest();
+	mist.InnerProductTest();
 
 
 	return 0;

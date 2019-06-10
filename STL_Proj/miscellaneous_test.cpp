@@ -87,6 +87,55 @@ void MiscellaneousTest::AccumulateTest()
 	std::cout << sss << std::endl;
 }
 
+int myfunc1(int x, int y) { return x - y; }
+int myfunc2(int x, int y) { return x + y; }
+void MiscellaneousTest::InnerProductTest()
+{
+	std::cout << "\n***********InnerProductTest***********" << std::endl;
+
+
+
+	std::vector<int> first(5);
+	std::vector<int> second(5);
+	Output(first, "first ");
+	Output(second, "second");
+
+
+	std::iota(first.begin(), first.end(), 2);
+	std::iota(second.begin(), second.end(), 3);
+	Output(first, "first ");
+	Output(second, "second");
+
+	std::cout << "default(init=0): ";
+	std::cout << std::inner_product(first.begin(), first.end(), second.begin(), 0);
+	std::cout << "\n";
+	std::cout << "default(init=1): ";
+	std::cout << std::inner_product(first.begin(), first.end(), second.begin(), 1);
+	std::cout << "\n";
+
+
+	std::cout << "default(init=0): ";
+	std::cout << std::inner_product(first.begin(), first.end(), second.begin(), 0, myfunc1, myfunc2);
+	std::cout << "\n";
+	std::cout << "default(init=1): ";
+	std::cout << std::inner_product(first.begin(), first.end(), second.begin(), 1, myfunc1, myfunc2);
+	std::cout << "\n";
+
+/*
+***********InnerProductTest***********
+first : (  5,  5,3fffffff) 0 0 0 0 0
+second: (  5,  5,3fffffff) 0 0 0 0 0
+first : (  5,  5,3fffffff) 2 3 4 5 6
+second: (  5,  5,3fffffff) 3 4 5 6 7
+default(init=0): 110
+default(init=1): 111
+default(init=0): -45   // = ( (2-3), (3-4), (4-5), (5-6), (6-7) ) x ( (2+3), (3+4), (4+5), (5+6), (6+7) )
+default(init=1): -44
+*/
+}
+
+
+
 void MiscellaneousTest::Output(std::vector<int>& myVector, std::string name)
 {
 	std::cout << name << ": ";
